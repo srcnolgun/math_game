@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FFF8EC">
+<meta name="description" content="Çocuklar için toplama, çıkarma, çarpma ve bölme oyunları.">
+<title>Matematik Oyunları</title>
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2A1E3F;--cream:#FFF8EC;--pink:#FF6B8B;--amber:#FFB627;--blue:#3FA7F5;--purple:#8C5CF0;--green:#2FCB7A}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{min-height:100%;background:#BFE6FF}
+body{margin:0;min-height:100%;color:var(--ink);
+  font-family:"Baloo 2",ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;
+  background:radial-gradient(circle at 50% 0%,#FFF1C9 0,#FFD0E6 40%,#BFE6FF 100%) fixed}
+.wrap{max-width:480px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 26px) 18px 40px}
+h1{margin:0;font-weight:800;line-height:.95;font-size:clamp(44px,13.5vw,64px);text-align:center}
+h1 span{display:block;text-shadow:3px 0 var(--ink),-3px 0 var(--ink),0 3px var(--ink),0 -3px var(--ink),
+  2px 2px var(--ink),-2px -2px var(--ink),2px -2px var(--ink),-2px 2px var(--ink),0 7px 0 var(--ink)}
+h1 span:first-child{color:var(--amber);transform:rotate(-4deg)}
+h1 span:last-child{color:var(--green);transform:rotate(3deg);margin-top:6px}
+.lead{text-align:center;font-weight:600;font-size:18px;line-height:1.35;margin:16px 4px 4px}
+.card{display:block;text-decoration:none;color:var(--ink);background:var(--cream);border:4px solid var(--ink);
+  border-radius:26px;box-shadow:0 8px 0 var(--ink);padding:14px 16px 16px;margin-top:18px;transition:transform .12s}
+.card:active{transform:translateY(5px);box-shadow:0 3px 0 var(--ink)}
+.card .top{display:flex;align-items:center;gap:12px}
+.card .art{font-size:42px;line-height:1;flex:none}
+.card h2{margin:0;font-size:29px;line-height:1.05;font-weight:800}
+.card p{margin:8px 0 0;font-size:16px;font-weight:600;line-height:1.35}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags b{font-weight:800;font-size:15px;line-height:1;color:#fff;border:3px solid var(--ink);border-radius:999px;
+  padding:4px 11px 2px;text-shadow:0 2px 0 var(--ink)}
+.go{display:block;margin-top:12px;border:4px solid var(--ink);border-radius:18px;color:#fff;font-weight:800;
+  font-size:25px;line-height:1;padding:11px 0 8px;text-align:center;text-shadow:0 3px 0 var(--ink)}
+.c1 .go,.c1 .tags b{background:var(--pink)}
+.c2 .go,.c2 .tags b{background:var(--blue)}
+.c1 .tags b:nth-child(2){background:var(--amber)}
+.c1 .tags b:nth-child(3){background:var(--purple)}
+.c2 .tags b:nth-child(2){background:var(--green)}
+.c2 .tags b:nth-child(3){background:var(--purple)}
+.note{background:rgba(255,255,255,.75);border:3px dashed var(--ink);border-radius:20px;padding:12px 14px;
+  margin-top:22px;font-size:15px;font-weight:600;line-height:1.4}
+.note b{display:block;font-size:17px;margin-bottom:4px}
+footer{text-align:center;margin-top:20px;font-size:14px;font-weight:700;opacity:.65}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span>Matematik</span><span>Oyunları</span></h1>
+  <p class="lead">İki oyun, dört işlem. Hangisini oynamak istersin?</p>
+
+  <a class="card c1" href="kosu/">
+    <div class="top"><span class="art" aria-hidden="true">🏃‍♀️</span><h2>Matematik Koşusu</h2></div>
+    <p>Koşarken doğru cevabın yazdığı tabelanın altından geç. 5 ada, 25 etap.</p>
+    <div class="tags"><b>Ada macerası</b><b>Serbest koşu</b><b>Hızlanma</b></div>
+    <span class="go">Oyna →</span>
+  </a>
+
+  <a class="card c2" href="platform/">
+    <div class="top"><span class="art" aria-hidden="true">🐱</span><h2>Sayı Diyarı</h2></div>
+    <p>Zıpla, altın topla, bulutların ve kapıların sorularını çöz. 4 dünya, 20 bölüm.</p>
+    <div class="tags"><b>Karakter seç</b><b>Zıplama</b><b>Hedef sayı</b></div>
+    <span class="go">Oyna →</span>
+  </a>
+
+  <div class="note">
+    <b>İpucu</b>
+    Telefon veya tablette bu sayfayı açıp tarayıcı menüsünden “Ana Ekrana Ekle” dersen, oyunlar uygulama gibi tam ekran açılır.
+  </div>
+
+  <footer>İnternet olmadan da çalışır · Reklamsız</footer>
+</div>
+</body>
+</html>
