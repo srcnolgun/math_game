@@ -7,8 +7,6 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#FFF8EC">
 <title>Sayı Diyarı</title>
-<link rel="apple-touch-icon" href="../icon-180.png">
-<link rel="icon" href="../icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
@@ -72,30 +70,45 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
 
 /* map */
 #scrMap{position:fixed;inset:0;display:flex;flex-direction:column;z-index:10;background:#BDEBFF}
-.mapbar{display:flex;align-items:center;gap:7px;padding:calc(env(safe-area-inset-top) + 8px) 10px 9px;background:var(--cream);border-bottom:4px solid var(--ink);z-index:2}
-.maptitle{font-weight:800;font-size:22px;line-height:1;flex:1;white-space:nowrap;overflow:hidden}
+.mapbar{display:flex;align-items:center;gap:7px;padding:calc(env(safe-area-inset-top) + 8px) 9px 9px;background:var(--cream);border-bottom:4px solid var(--ink);z-index:2}
+.maptitle{font-weight:800;font-size:20px;line-height:1;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mapbar .pill{height:38px;font-size:19px;padding:0 10px;box-shadow:0 3px 0 var(--ink)}
+.backbtn{border:3px solid var(--ink);border-radius:14px;background:#fff;box-shadow:0 4px 0 var(--ink);font-weight:800;font-size:18px;padding:5px 13px 2px;flex:none}
+.backbtn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
 .mapscroll{flex:1;overflow-y:auto;overflow-x:hidden;touch-action:pan-y;-webkit-overflow-scrolling:touch}
-.world{position:relative;height:610px;border-bottom:4px solid var(--ink);overflow:hidden}
-.winner{position:relative;max-width:540px;height:100%;margin:0 auto}
-.wname{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-2deg);white-space:nowrap;background:var(--cream);border:3px solid var(--ink);border-radius:999px;box-shadow:0 4px 0 var(--ink);padding:3px 16px 0 6px;font-weight:800;font-size:22px;display:flex;align-items:center;gap:8px;z-index:2}
-.wop{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:3px solid var(--ink);color:#fff;font-size:26px;line-height:1;margin-bottom:3px;text-shadow:0 2px 0 var(--ink)}
-.wpath{position:absolute;inset:0;width:100%;height:100%}
-.wpath path{fill:none;stroke:var(--ink);stroke-width:6;stroke-dasharray:1 14;stroke-linecap:round;opacity:.45}
-.deco{position:absolute;font-size:40px;line-height:1;transform:translate(-50%,-50%);pointer-events:none}
-.node{position:absolute;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;border:4px solid var(--ink);background:var(--acc);box-shadow:0 6px 0 var(--ink);color:#fff;font-weight:800;font-size:38px;line-height:1;padding:7px 0 0;text-shadow:0 3px 0 var(--ink);z-index:1}
-.node:active{transform:translate(-50%,calc(-50% + 4px));box-shadow:0 2px 0 var(--ink)}
-.node.locked{background:#D6D0DF;padding:0;display:grid;place-items:center}
-.node .lock{width:34px;height:34px;fill:#A69CB6;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
-.node .lock path{fill:none}
-.node .st{position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);display:flex;gap:1px}
-.node .st i{display:block;width:22px;height:22px}
-.node .st svg{width:100%;height:100%;fill:#fff;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
-.node .st i.on svg{fill:var(--gold)}
-.node.nope{animation:nodeshake .4s}
-.avatar{position:absolute;width:72px;height:72px;transform:translate(-50%,-100%);pointer-events:none;z-index:3;animation:bob 1.1s ease-in-out infinite}
-.mapfoot{padding:22px 16px 40px;text-align:center;background:var(--cream)}
-.mapfoot p{margin:0 0 10px;font-weight:600;font-size:16px}
+.ilist{max-width:520px;margin:0 auto;padding:14px 12px 40px;display:grid;gap:12px}
+.icard{display:flex;align-items:center;gap:12px;border:4px solid var(--ink);border-radius:24px;padding:12px;
+  background:linear-gradient(180deg,var(--sea1),var(--sea2));box-shadow:0 6px 0 var(--ink);text-align:left;width:100%}
+.icard:active{transform:translateY(4px);box-shadow:0 2px 0 var(--ink)}
+.ibadge{width:54px;height:54px;border-radius:50%;border:4px solid var(--ink);background:var(--acc);color:#fff;
+  display:grid;place-items:center;font-size:32px;line-height:1;text-shadow:0 3px 0 var(--ink);flex:none;padding-bottom:5px}
+.iinfo{flex:1;min-width:0}
+.iinfo b{display:block;font-size:22px;line-height:1.15;color:#fff;
+  text-shadow:2px 0 var(--ink),-2px 0 var(--ink),0 2px var(--ink),0 -2px var(--ink),0 4px 0 var(--ink)}
+.ibar{display:block;height:15px;border:3px solid var(--ink);border-radius:999px;background:#fff;margin-top:7px;overflow:hidden}
+.ibar i{display:block;height:100%;background:var(--acc);border-radius:999px}
+.iinfo small{display:block;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 0 var(--ink);margin-top:4px}
+.ideco2{font-size:26px;line-height:1;flex:none}
+.igo{font-size:30px;font-weight:800;color:#fff;text-shadow:0 3px 0 var(--ink);flex:none;padding:0 4px}
+.lvlhead{max-width:520px;margin:0 auto;padding:14px 12px 4px;display:flex;align-items:center;gap:10px}
+.lvlhead .ibadge{width:44px;height:44px;font-size:26px}
+.lvlhead b{font-size:22px;line-height:1.1}
+.lvlhead small{display:block;font-size:14px;font-weight:700;color:#5e5273}
+.lvlgrid{max-width:520px;margin:0 auto;padding:12px 12px 46px;display:grid;grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:18px 10px}
+.lnode{position:relative;aspect-ratio:1;border:3px solid var(--ink);border-radius:18px;background:var(--acc);color:#fff;
+  font-weight:800;font-size:21px;line-height:1;box-shadow:0 4px 0 var(--ink);text-shadow:0 2px 0 var(--ink);padding:0}
+.lnode:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.lnode.locked{background:#DDD8E4;color:#A69CB6;text-shadow:none;box-shadow:0 4px 0 #B9B1C6;border-color:#B9B1C6}
+.lnode.cur{outline:4px solid #fff;outline-offset:2px}
+.lnode .st{position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);display:flex;gap:1px}
+.lnode .st i{width:14px;height:14px;display:block}
+.lnode .st svg{width:100%;height:100%;fill:#fff;stroke:var(--ink);stroke-width:2.8;stroke-linejoin:round}
+.lnode .st i.on svg{fill:var(--gold)}
+.lnode.nope{animation:nodeshake .4s}
+.mapfoot{padding:20px 16px 40px;text-align:center;background:var(--cream)}
+.mapfoot p{margin:0 0 8px;font-weight:600;font-size:16px}
+.jump{display:flex;gap:8px;justify-content:center;margin:0 0 12px}
+.jump button{border:3px solid var(--ink);border-radius:14px;background:#fff;box-shadow:0 4px 0 var(--ink);font-weight:800;font-size:16px;padding:5px 12px 3px}
 .reset{background:none;border:none;font-weight:700;font-size:15px;color:#7a6f8c;text-decoration:underline;padding:6px}
 
 /* HUD */
@@ -143,7 +156,8 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
 @keyframes starin{0%{transform:scale(0) rotate(-40deg)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
 
-@media (max-width:440px){.maptitle{display:none}#mapCoinPill{margin-right:auto}}
+@media (max-width:470px){#mapCoinPill{display:none}}
+@media (max-width:430px){.maptitle{font-size:17px}.mapbar .pill{font-size:16px;padding:0 8px}}
 @media (max-width:350px){.mapbar .pill{font-size:16px;padding:0 7px}}
 @media (orientation:landscape) and (max-height:540px){
   .qcard{position:absolute;top:6px;left:50%;transform:translateX(-50%);margin:0;width:min(440px,52vw);padding:2px 10px 8px}
@@ -177,7 +191,8 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
 
 <section id="scrMap" class="hidden">
   <header class="mapbar">
-    <div class="maptitle">Sayı Diyarı</div>
+    <button class="backbtn" id="mapBack" aria-label="Geri">←</button>
+    <div class="maptitle" id="mapTitle">Sayı Diyarı</div>
     <div class="pill"><svg class="pstar" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><b id="mapStars">0</b></div>
     <div class="pill" id="mapCoinPill"><i class="coin-ic"></i><b id="mapCoins">0</b></div>
     <button class="icon-btn" id="btnChar" aria-label="Karakter değiştir"><img id="avatarImg" alt=""></button>
@@ -287,9 +302,14 @@ function loadSave() {
   } catch (e) { /* kayıt yoksa ya da erişilemiyorsa boş başla */ }
 }
 function writeSave() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch (e) { /* önizlemede kayıt olmayabilir */ } }
+const LPI = 100;
+const tOf = l => l / (LPI - 1);
 const keyOf = (w, l) => w + '-' + l;
 const starsOf = (w, l) => save.stars[keyOf(w, l)] || 0;
 const isUnlocked = (w, l) => l === 0 || starsOf(w, l - 1) > 0;
+function doneCount(w) { let n = 0; for (let l = 0; l < LPI; l++) if (starsOf(w, l)) n++; return n; }
+function worldStars(w) { let n = 0; for (let l = 0; l < LPI; l++) n += starsOf(w, l); return n; }
+function nextIn(w) { for (let l = 0; l < LPI; l++) if (!starsOf(w, l)) return l; return LPI - 1; }
 
 /* ================= DÜNYALAR ================= */
 const WORLDS = [
@@ -348,33 +368,21 @@ const sfx = {
 function vibrate(ms = 120) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* desteklenmiyor */ } }
 
 /* ================= SORULAR ================= */
-function genQ(op, d) {
+function genQ(op, t) {
   let a, b, ans;
   if (op === '+') {
-    const r = [[1, 10, 1, 10], [5, 20, 3, 15], [10, 50, 5, 40], [20, 80, 11, 79], [100, 499, 50, 399]][d];
-    a = rnd(r[0], r[1]); b = rnd(r[2], r[3]); ans = a + b;
+    const A = Math.round(5 * Math.pow(200, t)), B = Math.max(1, Math.round(A * 0.8));
+    a = rnd(Math.max(1, Math.round(A * 0.3)), A); b = rnd(Math.max(1, Math.round(B * 0.25)), B); ans = a + b;
   } else if (op === '−') {
-    if (d === 0) { a = rnd(5, 15); b = rnd(1, a); }
-    else if (d === 1) { a = rnd(10, 30); b = rnd(2, a - 1); }
-    else if (d === 2) { a = rnd(30, 99); b = rnd(5, a - 5); }
-    else if (d === 3) { a = rnd(50, 99); b = rnd(11, a - 10); }
-    else { a = rnd(200, 999); b = rnd(50, a - 50); }
-    ans = a - b;
+    const A = Math.round(6 * Math.pow(166, t));
+    a = rnd(Math.max(3, Math.round(A * 0.4)), A); b = rnd(1, a - 1); ans = a - b;
   } else if (op === '×') {
-    if (d === 0) { a = pick([2, 5, 10]); b = rnd(1, 10); }
-    else if (d === 1) { a = rnd(2, 5); b = rnd(2, 10); }
-    else if (d === 2) { a = rnd(6, 9); b = rnd(2, 10); }
-    else if (d === 3) { a = rnd(2, 10); b = rnd(2, 10); }
-    else { a = rnd(11, 20); b = rnd(2, 9); }
-    ans = a * b;
+    const FA = Math.max(3, Math.round(3 + t * 17)), FB = Math.max(3, Math.round(3 + t * 9));
+    a = rnd(Math.max(2, Math.round(FA * 0.45)), FA); b = rnd(Math.max(1, Math.round(FB * 0.4)), FB); ans = a * b;
   } else {
-    let dv, qq;
-    if (d === 0) { dv = pick([2, 5, 10]); qq = rnd(1, 10); }
-    else if (d === 1) { dv = rnd(2, 5); qq = rnd(2, 10); }
-    else if (d === 2) { dv = rnd(6, 9); qq = rnd(2, 10); }
-    else if (d === 3) { dv = rnd(2, 10); qq = rnd(2, 10); }
-    else { dv = rnd(2, 9); qq = rnd(11, 20); }
-    a = dv * qq; b = dv; ans = qq;
+    const FA = Math.max(3, Math.round(3 + t * 17)), FB = Math.max(2, Math.round(2 + t * 10));
+    const dv = rnd(Math.max(2, Math.round(FB * 0.45)), FB), q = rnd(Math.max(1, Math.round(FA * 0.35)), FA);
+    a = dv * q; b = dv; ans = q;
   }
   return { op, a, b, ans, text: `${a} ${op} ${b}` };
 }
@@ -397,7 +405,8 @@ function makeOptions(q) {
 const applyOp = (v, op, n) => op === '+' ? v + n : op === '−' ? v - n : op === '×' ? v * n : v / n;
 
 /* Hedef sayı: iki seçim çifti. İlk seçim serbest, ikinci seçimde doğru altını bulmak gerekir. */
-function genTarget(op, d) {
+function genTarget(op, t) {
+  const d = clamp(Math.round(t * 4), 0, 4);
   if (op === '+') {
     const m = [6, 10, 15, 25, 40][d];
     for (let k = 0; k < 400; k++) {
@@ -444,6 +453,7 @@ function genTarget(op, d) {
 
 /* ================= BÖLÜM ÜRETİMİ ================= */
 function buildLevel(w, l) {
+  const tt = tOf(l);
   const rand = mulberry32(7919 + w * 131 + l * 977);
   const ri = (a, b) => Math.floor(rand() * (b - a + 1)) + a;
   const wd = WORLDS[w];
@@ -458,11 +468,11 @@ function buildLevel(w, l) {
 
   function filler() {
     const kinds = ['flat', 'pit', 'pit', 'step', 'hazard', 'enemy', 'tall', 'sky'];
-    if (l >= 1) kinds.push('bigpit', 'bigpit');
+    if (tt >= 0.08) kinds.push('bigpit', 'bigpit');
     const t = kinds[ri(0, kinds.length - 1)];
     if (t === 'flat') { const len = ri(4, 6), a = x; ground(len); coinLine(a + 1, a + len - 1, h + 0.6); }
     else if (t === 'pit') { ground(2); const pw = Math.round((1.0 + rand() * 0.5) * 10) / 10; const a = x; x += pw; coinArc(a - 0.8, a + pw + 0.8, h, 1.1); ground(3); }
-    else if (t === 'bigpit') { ground(3); const pw = Math.round((2.1 + rand() * (0.2 + l * 0.08)) * 10) / 10; const a = x; x += pw; coinArc(a - 0.9, a + pw + 0.9, h, 2.2); ground(3); }
+    else if (t === 'bigpit') { ground(3); const pw = Math.round((2.1 + rand() * (0.2 + tt * 0.32)) * 10) / 10; const a = x; x += pw; coinArc(a - 0.9, a + pw + 0.9, h, 2.2); ground(3); }
     else if (t === 'tall') { ground(3); const a = x; if (h <= 1) { h += 2; coinArc(a - 1.2, a + 1.4, h - 2, 2.6); } else h -= 2; ground(ri(5, 6)); }
     else if (t === 'sky') { const a = x; ground(7); coinLine(a + 1, a + 2, h + 0.6); coinLine(a + 3, a + 5, h + 3.1); }
     else if (t === 'step') { ground(2); if (h >= 2 || (h > 0 && rand() < 0.5)) h -= 1; else h += 1; const len = ri(4, 6), a = x; ground(len); coinLine(a + 1.5, a + len - 1, h + 0.6); }
@@ -487,12 +497,12 @@ function buildLevel(w, l) {
 
   ground(18);
   const evs = ['cloud', 'door', 'target'];
-  if (l >= 1) evs.push('chest');
-  if (l >= 2) evs.push('cloud');
-  if (l >= 3) evs.push('door');
-  if (l >= 4) evs.push('target');
+  if (tt >= 0.05) evs.push('chest');
+  if (tt >= 0.25) evs.push('cloud');
+  if (tt >= 0.5) evs.push('door');
+  if (tt >= 0.75) evs.push('target');
   for (let i = evs.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [evs[i], evs[j]] = [evs[j], evs[i]]; }
-  const fc = l >= 3 ? 3 : 2;
+  const fc = tt >= 0.5 ? 3 : 2;
   for (const ev of evs) { for (let k = 0; k < fc; k++) filler(); event(ev); }
   filler(); filler();
   ground(5); Lv.finishX = x; Lv.finishH = h; ground(14);
@@ -701,7 +711,7 @@ function beginEvent(e) {
 
 function askQuestion(e) {
   let q, k = 0;
-  do { q = genQ(L.world.op, L.l); } while (q.text === lastQ && k++ < 10);
+  do { q = genQ(L.world.op, tOf(L.l)); } while (q.text === lastQ && k++ < 10);
   lastQ = q.text;
   const o = makeOptions(q);
   run.q = { ...q, answers: o.answers, correct: o.correct };
@@ -778,7 +788,7 @@ function chestAnswer(e, ok) {
 }
 
 function showTargetSign(e) {
-  const t = genTarget(L.world.op, L.l);
+  const t = genTarget(L.world.op, tOf(L.l));
   e.tgt = t;
   e.pairs = e.pairXs.map((x, k) => {
     const [a, b] = t.pairs[k];
@@ -865,9 +875,9 @@ function finishLevel() {
   $('stCoins').textContent = run.coins;
   fillReview($('winReview'), $('winRevLabel'));
   const nb = $('nextBtn');
-  if (cur.l < 4) { nb.textContent = 'Sonraki bölüm'; nb.onclick = () => startLevel(cur.w, cur.l + 1); }
-  else if (cur.w < 3) { nb.textContent = 'Sonraki dünya'; nb.onclick = () => startLevel(cur.w + 1, 0); }
-  else { nb.textContent = 'Haritaya dön'; nb.onclick = openMap; }
+  if (cur.l < LPI - 1) { nb.textContent = 'Sonraki bölüm'; nb.onclick = () => startLevel(cur.w, cur.l + 1); }
+  else if (cur.w < WORLDS.length - 1) { nb.textContent = 'Sonraki dünya'; nb.onclick = () => startLevel(cur.w + 1, 0); }
+  else { nb.textContent = 'Haritaya dön'; nb.onclick = () => openMap(); }
   show('win');
 }
 function failLevel() {
@@ -1521,67 +1531,94 @@ function refreshAvatar() {
 }
 
 /* ---------- harita ---------- */
-const NODES = [[24, 178], [70, 262], [30, 348], [72, 432], [40, 516]];
-const DECO_POS = [[86, 150], [11, 270], [89, 345], [12, 455], [85, 570]];
-const MAP_DECO = [['🌳', '🌷', '🍄', '🌳', '🦋'], ['💎', '🦇', '🍄', '✨', '💎'], ['🌴', '🐚', '🦀', '🌴', '⛵'], ['☁️', '🌈', '⭐', '🎈', '☁️']];
-function avatarNode() {
-  const lst = save.last;
-  if (!lst) return { w: 0, l: 0 };
-  if (starsOf(lst.w, lst.l) > 0 && lst.l < 4) return { w: lst.w, l: lst.l + 1 };
-  return lst;
-}
-function openMap() {
+const WSEA = [['#C9F2B8', '#86D67C'], ['#9C86E0', '#5B47A8'], ['#A5ECF5', '#F7DFA0'], ['#FFD6EA', '#C9E3FF']];
+const WDECO = ['🌳', '💎', '🌴', '🌈'];
+let mapView = 'worlds', mapW = 0;
+
+function openMap(view, w) {
   state = 'map'; L = null; timers.length = 0; paused = false; tipOpen = false;
   ['hud', 'qcard', 'targetPill', 'win', 'fail', 'pause', 'tip', 'scrChar'].forEach(hide);
   $('toast').className = '';
   show('scrMap');
-  buildMap();
+  if (view === 'levels') { mapView = 'levels'; mapW = w; buildLevels(w); }
+  else { mapView = 'worlds'; buildWorlds(); }
 }
-function buildMap() {
-  const root = $('mapScroll');
-  root.innerHTML = '';
+function starRow(n) { return `<span class="st">${[0, 1, 2].map(k => `<i class="${k < n ? 'on' : ''}">${STAR_SVG}</i>`).join('')}</span>`; }
+function mapHeader() {
   let total = 0;
   Object.values(save.stars).forEach(v => { total += v; });
-  $('mapStars').textContent = `${total}/60`;
+  $('mapStars').textContent = `${total}/${WORLDS.length * LPI * 3}`;
   $('mapCoins').textContent = save.coins;
-  const av = avatarNode();
-  let pathD = `M${NODES[0][0]} ${NODES[0][1]}`;
-  for (let i = 1; i < NODES.length; i++) { const [x0, y0] = NODES[i - 1], [x1, y1] = NODES[i]; pathD += ` C${x0} ${y0 + 55} ${x1} ${y1 - 55} ${x1} ${y1}`; }
-  let avatarSec = null;
-  WORLDS.forEach((wd, w) => {
-    const sec = document.createElement('section');
-    sec.className = 'world';
-    sec.style.background = `linear-gradient(180deg, ${wd.mapBg[0]}, ${wd.mapBg[1]})`;
-    let html = `<div class="winner"><svg class="wpath" viewBox="0 0 100 610" preserveAspectRatio="none"><path d="${pathD}" vector-effect="non-scaling-stroke"/></svg>`;
-    html += `<div class="wname"><span class="wop" style="background:${wd.accent}">${wd.op}</span>${wd.name}</div>`;
-    DECO_POS.forEach(([x, y], i) => { html += `<span class="deco" style="left:${x}%;top:${y}px" aria-hidden="true">${MAP_DECO[w][i]}</span>`; });
-    NODES.forEach(([x, y], l) => {
-      const st = starsOf(w, l), lock = !isUnlocked(w, l);
-      const stars = lock ? '' : `<span class="st">${[0, 1, 2].map(i => `<i class="${i < st ? 'on' : ''}">${STAR_SVG}</i>`).join('')}</span>`;
-      html += `<button class="node${lock ? ' locked' : ''}" data-w="${w}" data-l="${l}" style="left:${x}%;top:${y}px;--acc:${wd.accent}" aria-label="${wd.name}, bölüm ${l + 1}${lock ? ', kilitli' : ''}">${lock ? LOCK_SVG : l + 1}${stars}</button>`;
-      if (av.w === w && av.l === l) { html += `<img class="avatar" src="${avatarURL}" style="left:${x}%;top:${y - 36}px" alt="">`; avatarSec = sec; }
-    });
-    html += '</div>';
-    sec.innerHTML = html;
-    root.appendChild(sec);
-  });
+}
+function buildWorlds() {
+  $('mapTitle').textContent = 'Dünyalar';
+  mapHeader();
+  const root = $('mapScroll');
+  root.innerHTML = '';
+  const list = document.createElement('div');
+  list.className = 'ilist';
+  list.innerHTML = WORLDS.map((wd, w) => {
+    const d = doneCount(w), st2 = worldStars(w);
+    return `<button class="icard" data-w="${w}" style="--acc:${wd.accent};--sea1:${WSEA[w][0]};--sea2:${WSEA[w][1]}">
+      <span class="ibadge">${wd.op}</span>
+      <span class="iinfo"><b>${wd.name}</b>
+        <span class="ibar"><i style="width:${Math.round(d / LPI * 100)}%"></i></span>
+        <small>${d}/${LPI} bölüm · ⭐ ${st2}/${LPI * 3}</small></span>
+      <span class="ideco2">${WDECO[w]}</span><span class="igo">›</span>
+    </button>`;
+  }).join('');
+  root.appendChild(list);
   const foot = document.createElement('div');
   foot.className = 'mapfoot';
-  foot.innerHTML = '<p>Her dünyanın ilk bölümü açık. Bir bölümü bitirince sonraki açılır.</p><button class="reset" id="resetBtn">İlerlemeyi sıfırla</button>';
+  foot.innerHTML = '<p>Her dünyada 100 bölüm var, sorular yavaş yavaş zorlaşır. İstediğin işlemden başlayabilirsin.</p><button class="reset" id="resetBtn">İlerlemeyi sıfırla</button>';
   root.appendChild(foot);
-  root.querySelectorAll('.node').forEach(b => b.addEventListener('click', () => {
-    ensureAudio();
-    const w = +b.dataset.w, l = +b.dataset.l;
-    if (!isUnlocked(w, l)) { b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); return; }
-    sfx.click(); startLevel(w, l);
-  }));
+  list.querySelectorAll('.icard').forEach(b => b.addEventListener('click', () => { ensureAudio(); sfx.click(); openMap('levels', +b.dataset.w); }));
   let armed = false;
   $('resetBtn').addEventListener('click', e => {
     if (!armed) { armed = true; e.target.textContent = 'Emin misin? Tüm yıldızlar silinir. Tekrar dokun.'; return; }
-    save.stars = {}; save.coins = 0; save.tips = {}; save.last = null; writeSave(); buildMap();
+    save.stars = {}; save.coins = 0; save.tips = {}; save.last = null; writeSave(); buildWorlds();
   });
   root.scrollTop = 0;
-  if (avatarSec && avatarSec !== root.firstElementChild) root.scrollTop = Math.max(0, avatarSec.getBoundingClientRect().top - root.getBoundingClientRect().top - 10);
+}
+function buildLevels(w) {
+  const wd = WORLDS[w], cu = nextIn(w);
+  $('mapTitle').textContent = wd.name;
+  mapHeader();
+  const root = $('mapScroll');
+  root.innerHTML = '';
+  const head = document.createElement('div');
+  head.className = 'lvlhead';
+  head.innerHTML = `<span class="ibadge" style="background:${wd.accent}">${wd.op}</span>
+    <span><b>${wd.name}</b><small>${doneCount(w)}/${LPI} bölüm tamam · Bölüm ${cu + 1} sırada</small></span>`;
+  root.appendChild(head);
+  const grid = document.createElement('div');
+  grid.className = 'lvlgrid';
+  let html = '';
+  for (let l = 0; l < LPI; l++) {
+    const lock = !isUnlocked(w, l), sc = starsOf(w, l), isCur = l === cu && !lock;
+    html += `<button class="lnode${lock ? ' locked' : ''}${isCur ? ' cur' : ''}" data-l="${l}" style="--acc:${wd.accent}"
+      aria-label="Bölüm ${l + 1}${lock ? ', kilitli' : ''}">${l + 1}${lock ? '' : starRow(sc)}</button>`;
+  }
+  grid.innerHTML = html;
+  root.appendChild(grid);
+  const foot = document.createElement('div');
+  foot.className = 'mapfoot';
+  foot.innerHTML = '<div class="jump"><button id="jumpCur">Sıradaki bölüme git</button><button id="backIsl">Diğer dünyalar</button></div><p>Bir bölümü bitirince sonraki açılır.</p>';
+  root.appendChild(foot);
+  grid.querySelectorAll('.lnode').forEach(b => b.addEventListener('click', () => {
+    ensureAudio();
+    const l = +b.dataset.l;
+    if (!isUnlocked(w, l)) { b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); return; }
+    sfx.click(); startLevel(w, l);
+  }));
+  const toCur = () => {
+    const el = grid.querySelector('.lnode.cur');
+    if (el) root.scrollTop = Math.max(0, el.getBoundingClientRect().top - root.getBoundingClientRect().top + root.scrollTop - root.clientHeight * 0.35);
+  };
+  $('jumpCur').addEventListener('click', toCur);
+  $('backIsl').addEventListener('click', () => { sfx.click(); openMap(); });
+  root.scrollTop = 0;
+  toCur();
 }
 
 /* ================= DÖNGÜ & GİRDİ ================= */
@@ -1618,15 +1655,16 @@ document.querySelectorAll('.opt').forEach(b => b.addEventListener('pointerdown',
 $('readyBtn').addEventListener('click', targetReady);
 $('pauseBtn').addEventListener('click', () => { ensureAudio(); pauseGame(); });
 $('resumeBtn').addEventListener('click', resumeGame);
-$('quitBtn').addEventListener('click', () => { sfx.click(); openMap(); });
+$('quitBtn').addEventListener('click', () => { sfx.click(); openMap('levels', cur.w); });
 $('soundBtn2').addEventListener('click', () => setSound(!soundOn));
 $('btnSound').addEventListener('click', () => setSound(!soundOn));
 $('btnChar').addEventListener('click', () => { ensureAudio(); sfx.click(); openChar(); });
+$('mapBack').addEventListener('click', () => { ensureAudio(); sfx.click(); if (mapView === 'levels') openMap(); else openChar(); });
 $('tipOk').addEventListener('click', closeTip);
 $('retryBtn').addEventListener('click', () => startLevel(cur.w, cur.l));
-$('mapBtn').addEventListener('click', openMap);
+$('mapBtn').addEventListener('click', () => openMap('levels', cur.w));
 $('failRetry').addEventListener('click', () => startLevel(cur.w, cur.l));
-$('failMap').addEventListener('click', openMap);
+$('failMap').addEventListener('click', () => openMap('levels', cur.w));
 document.querySelectorAll('.charcard').forEach(c => c.addEventListener('click', () => {
   ensureAudio(); sfx.click();
   charPick = c.dataset.c;

@@ -99,32 +99,40 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
   font-weight:800;font-size:18px;padding:5px 13px 2px;flex:none}
 .backbtn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
 .mapscroll{flex:1;overflow-y:auto;overflow-x:hidden;touch-action:pan-y;-webkit-overflow-scrolling:touch}
-.isl{position:relative;height:470px;border-bottom:4px solid var(--ink);overflow:hidden}
-.islin{position:relative;max-width:520px;height:100%;margin:0 auto}
-.cloudy{position:absolute;border-radius:999px;background:rgba(255,255,255,.6)}
-.blob{position:absolute;left:3%;right:3%;top:74px;bottom:18px;border:4px solid var(--ink);
-  border-radius:48% 52% 46% 54%/42% 46% 54% 58%;box-shadow:0 7px 0 rgba(42,30,63,.25)}
-.iname{position:absolute;top:16px;left:50%;transform:translateX(-50%) rotate(-2deg);white-space:nowrap;
-  background:var(--cream);border:3px solid var(--ink);border-radius:999px;box-shadow:0 4px 0 var(--ink);
-  padding:3px 16px 0 6px;font-weight:800;font-size:21px;display:flex;align-items:center;gap:8px;z-index:3}
-.iop{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;border:3px solid var(--ink);
-  color:#fff;font-size:24px;line-height:1;margin-bottom:3px;text-shadow:0 2px 0 var(--ink)}
-.ideco{position:absolute;font-size:32px;line-height:1;transform:translate(-50%,-50%);z-index:1}
-.node{position:absolute;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;
-  border:4px solid var(--ink);background:var(--acc);box-shadow:0 6px 0 var(--ink);color:#fff;font-weight:800;
-  font-size:32px;line-height:1;padding:6px 0 0;text-shadow:0 3px 0 var(--ink);z-index:2}
-.node:active{transform:translate(-50%,calc(-50% + 4px));box-shadow:0 2px 0 var(--ink)}
-.node.locked{background:#D6D0DF;padding:0;display:grid;place-items:center}
-.node .lock{width:30px;height:30px;fill:#A69CB6;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
-.node .lock path{fill:none}
-.node .st{position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);display:flex;gap:1px}
-.node .st i{display:block;width:19px;height:19px}
-.node .st svg{width:100%;height:100%;fill:#fff;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
-.node .st i.on svg{fill:var(--gold)}
-.node.cur::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:4px dashed #fff;animation:spin 7s linear infinite}
-.node.nope{animation:nodeshake .4s}
+.ilist{max-width:520px;margin:0 auto;padding:14px 12px 40px;display:grid;gap:12px}
+.icard{display:flex;align-items:center;gap:12px;border:4px solid var(--ink);border-radius:24px;padding:12px;
+  background:linear-gradient(180deg,var(--sea1),var(--sea2));box-shadow:0 6px 0 var(--ink);text-align:left;width:100%}
+.icard:active{transform:translateY(4px);box-shadow:0 2px 0 var(--ink)}
+.ibadge{width:54px;height:54px;border-radius:50%;border:4px solid var(--ink);background:var(--acc);color:#fff;
+  display:grid;place-items:center;font-size:32px;line-height:1;text-shadow:0 3px 0 var(--ink);flex:none;padding-bottom:5px}
+.iinfo{flex:1;min-width:0}
+.iinfo b{display:block;font-size:22px;line-height:1.15;color:#fff;
+  text-shadow:2px 0 var(--ink),-2px 0 var(--ink),0 2px var(--ink),0 -2px var(--ink),0 4px 0 var(--ink)}
+.ibar{display:block;height:15px;border:3px solid var(--ink);border-radius:999px;background:#fff;margin-top:7px;overflow:hidden}
+.ibar i{display:block;height:100%;background:var(--acc);border-radius:999px}
+.iinfo small{display:block;font-size:14px;font-weight:800;color:#fff;text-shadow:0 2px 0 var(--ink);margin-top:4px}
+.ideco2{font-size:26px;line-height:1;flex:none}
+.lvlhead{max-width:520px;margin:0 auto;padding:14px 12px 4px;display:flex;align-items:center;gap:10px}
+.lvlhead .ibadge{width:44px;height:44px;font-size:26px}
+.lvlhead b{font-size:22px;line-height:1.1}
+.lvlhead small{display:block;font-size:14px;font-weight:700;color:#5e5273}
+.lvlgrid{max-width:520px;margin:0 auto;padding:12px 12px 46px;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:18px 10px}
+.lnode{position:relative;aspect-ratio:1;border:3px solid var(--ink);border-radius:18px;background:var(--acc);
+  color:#fff;font-weight:800;font-size:21px;line-height:1;box-shadow:0 4px 0 var(--ink);text-shadow:0 2px 0 var(--ink);padding:0}
+.lnode:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.lnode.locked{background:#DDD8E4;color:#A69CB6;text-shadow:none;box-shadow:0 4px 0 #B9B1C6;border-color:#B9B1C6}
+.lnode.cur{outline:4px solid #fff;outline-offset:2px}
+.lnode .st{position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);display:flex;gap:1px}
+.lnode .st i{width:14px;height:14px;display:block}
+.lnode .st svg{width:100%;height:100%;fill:#fff;stroke:var(--ink);stroke-width:2.8;stroke-linejoin:round}
+.lnode .st i.on svg{fill:var(--gold)}
+.lnode.nope{animation:nodeshake .4s}
 .mapfoot{padding:20px 16px 40px;text-align:center;background:var(--cream)}
 .mapfoot p{margin:0 0 8px;font-weight:600;font-size:16px}
+.jump{display:flex;gap:8px;justify-content:center;margin:0 0 12px}
+.jump button{border:3px solid var(--ink);border-radius:14px;background:#fff;box-shadow:0 4px 0 var(--ink);
+  font-weight:800;font-size:16px;padding:5px 12px 3px}
 .reset{background:none;border:none;font-weight:700;font-size:15px;color:#7a6f8c;text-decoration:underline;padding:6px}
 
 @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}
@@ -137,7 +145,7 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
   .qhint{font-size:13px}
   .heart{width:26px;height:26px}
 }
-@media (max-width:360px){.maptitle{font-size:18px}.mapbar .pill{font-size:17px;padding:0 8px}}
+@media (max-width:430px){.maptitle{font-size:18px}.mapbar .pill{font-size:16px;padding:0 8px}.mapbar .pill svg{width:18px;height:18px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -162,8 +170,8 @@ button:focus-visible{outline:4px solid #fff;outline-offset:3px}
 
 <section id="scrMap" class="hidden">
   <header class="mapbar">
-    <a class="backbtn" id="mapBack" href="../" aria-label="Oyunlara dön">←</a>
-    <div class="maptitle">Balon Adaları</div>
+    <button class="backbtn" id="mapBack" aria-label="Geri">←</button>
+    <div class="maptitle" id="mapTitle">Balon Adaları</div>
     <div class="pill"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z" fill="#FFD23F" stroke="#2A1E3F" stroke-width="2.2" stroke-linejoin="round"/></svg><b id="mapStars">0/75</b></div>
     <button class="icon-btn" id="btnSound" aria-label="Ses">🔊</button>
   </header>
@@ -245,8 +253,8 @@ const ISLANDS = [
     sky: ['#FF9EC7', '#C7E4FF', '#FFF6E0'], ground: '#93DE9C', ground2: '#7BC985', hill: '#BDEBC4',
     balloons: ['#FF6B8B', '#FFB627', '#3FA7F5', '#2FCB7A', '#8C5CF0', '#FF8FD0'], night: false, scene: 'candy' }
 ];
-const NODE_POS = [[24, 150], [58, 212], [30, 280], [64, 344], [42, 406]];
-const DECO_POS = [[85, 120], [10, 250], [88, 330], [14, 405]];
+const LPI = 100;
+const tOf = l => l / (LPI - 1);
 
 /* ================= kayıt ================= */
 const SAVE_KEY = 'balon-patlat-v1';
@@ -260,13 +268,12 @@ function loadSave() {
 function writeSave() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch (e) { /* önizlemede kayıt olmayabilir */ } }
 const keyOf = (i, s) => i + '-' + s;
 const starsOf = (i, s) => save.stars[keyOf(i, s)] || 0;
-const isUnlocked = (i, s) => (i === 0 && s === 0) || (s > 0 ? starsOf(i, s - 1) > 0 : starsOf(i - 1, 4) > 0);
-const needOf = s => 6 + s;
+const isUnlocked = (i, s) => s === 0 || starsOf(i, s - 1) > 0;
+const needOf = t => 5 + Math.round(t * 5);
 function totalStars() { let t = 0; Object.values(save.stars).forEach(v => { t += v; }); return t; }
-function nextStage() {
-  for (let i = 0; i < 5; i++) for (let s = 0; s < 5; s++) if (!starsOf(i, s)) return { i, s };
-  return { i: 4, s: 4 };
-}
+function doneCount(i) { let n = 0; for (let s = 0; s < LPI; s++) if (starsOf(i, s)) n++; return n; }
+function islandStars(i) { let n = 0; for (let s = 0; s < LPI; s++) n += starsOf(i, s); return n; }
+function nextIn(i) { for (let s = 0; s < LPI; s++) if (!starsOf(i, s)) return s; return LPI - 1; }
 
 /* ================= ses ================= */
 let actx = null, soundOn = true;
@@ -307,36 +314,25 @@ const sfx = {
 function vibrate(ms = 110) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) { /* desteklenmiyor */ } }
 
 /* ================= sorular ================= */
-function genQ(op, d) {
+function genQ(op, t) {
   let a, b, ans;
   if (op === '+') {
-    const r = [[1, 10, 1, 10], [5, 20, 3, 15], [10, 60, 5, 39], [20, 99, 11, 89], [100, 499, 50, 399]][d];
-    a = rnd(r[0], r[1]); b = rnd(r[2], r[3]); ans = a + b;
+    const A = Math.round(5 * Math.pow(200, t)), B = Math.max(1, Math.round(A * 0.8));
+    a = rnd(Math.max(1, Math.round(A * 0.3)), A); b = rnd(Math.max(1, Math.round(B * 0.25)), B); ans = a + b;
   } else if (op === '−') {
-    if (d === 0) { a = rnd(5, 15); b = rnd(1, a); }
-    else if (d === 1) { a = rnd(10, 30); b = rnd(2, a - 1); }
-    else if (d === 2) { a = rnd(30, 99); b = rnd(5, a - 5); }
-    else if (d === 3) { a = rnd(50, 99); b = rnd(11, a - 10); }
-    else { a = rnd(200, 999); b = rnd(50, a - 50); }
-    ans = a - b;
+    const A = Math.round(6 * Math.pow(166, t));
+    a = rnd(Math.max(3, Math.round(A * 0.4)), A); b = rnd(1, a - 1); ans = a - b;
   } else if (op === '×') {
-    if (d === 0) { a = pick([2, 5, 10]); b = rnd(1, 10); }
-    else if (d === 1) { a = rnd(2, 5); b = rnd(2, 10); }
-    else if (d === 2) { a = rnd(6, 9); b = rnd(2, 10); }
-    else if (d === 3) { a = rnd(2, 10); b = rnd(2, 10); }
-    else { a = rnd(11, 20); b = rnd(2, 9); }
-    ans = a * b;
+    const FA = Math.max(3, Math.round(3 + t * 17)), FB = Math.max(3, Math.round(3 + t * 9));
+    a = rnd(Math.max(2, Math.round(FA * 0.45)), FA); b = rnd(Math.max(1, Math.round(FB * 0.4)), FB); ans = a * b;
   } else {
-    let dv, q;
-    if (d === 0) { dv = pick([2, 5, 10]); q = rnd(1, 10); }
-    else if (d === 1) { dv = rnd(2, 5); q = rnd(2, 10); }
-    else if (d === 2) { dv = rnd(6, 9); q = rnd(2, 10); }
-    else if (d === 3) { dv = rnd(2, 10); q = rnd(2, 10); }
-    else { dv = rnd(2, 9); q = rnd(11, 20); }
+    const FA = Math.max(3, Math.round(3 + t * 17)), FB = Math.max(2, Math.round(2 + t * 10));
+    const dv = rnd(Math.max(2, Math.round(FB * 0.45)), FB), q = rnd(Math.max(1, Math.round(FA * 0.35)), FA);
     a = dv * q; b = dv; ans = q;
   }
   return { op, a, b, ans, text: `${a} ${op} ${b}` };
 }
+
 function wrongValues(q, n) {
   const { op, a, b, ans } = q;
   const near = [1, -1, 2, -2, 3, -3];
@@ -385,9 +381,11 @@ function startStage(i, s) {
   cur = { i, s }; isl = ISLANDS[i];
   save.last = { i, s }; writeSave();
   balloons.length = 0; particles.length = 0;
+  const t = tOf(s);
   Object.assign(run, { lives: 3, correct: 0, wrong: 0, streak: 0, bestStreak: 0, wrongList: [],
-    q: null, need: needOf(s), diff: s, spawnT: 0.3, over: false, endT: 0, won: false, locked: false,
-    rise: 0.105 + s * 0.013 + i * 0.006, maxB: s >= 4 ? 6 : s >= 2 ? 5 : 4, gap: 1.0 - s * 0.07 });
+    q: null, need: needOf(t), diff: t, spawnT: 0.3, over: false, endT: 0, won: false, locked: false,
+    wrongBefore: 0, sinceQ: 0,
+    rise: 0.095 + t * 0.075, maxB: 4 + Math.round(t * 2), gap: 1.05 - t * 0.35 });
   ['scrMap', 'stageEnd', 'pause', 'tip'].forEach(hide);
   $('toast').className = '';
   show('hud');
@@ -395,8 +393,9 @@ function startStage(i, s) {
   skyKey = '';
   renderHearts(); updateProg(); measureTop();
   newQuestion(true);
+  const firstCorrect = rnd(0, 2);
   for (let k = 0; k < 3; k++) {
-    spawnBalloon(k === 1 ? 'correct' : 'wrong');
+    spawnBalloon(k === firstCorrect ? 'correct' : 'wrong');
     const b = balloons[balloons.length - 1];
     b.y = H - b.r * (0.2 + k * 1.9);
   }
@@ -409,6 +408,7 @@ function newQuestion(first) {
   do { q = genQ(pick(isl.ops), run.diff); } while (q.text === lastQ && k++ < 10);
   lastQ = q.text;
   run.q = q;
+  run.wrongBefore = rnd(0, 2); run.sinceQ = 0;
   if (!first) for (const b of balloons) if (b.alive && !b.stale) { b.stale = true; b.speed = Math.max(b.speed, run.rise) * 3.4; }
   run.locked = false;
   setQ(`${q.a} ${q.op} ${q.b} = <span class="qm">?</span>`);
@@ -432,7 +432,7 @@ function spawnBalloon(mode) {
     if (ok) break;
     x = margin + Math.random() * Math.max(1, W - margin * 2);
   }
-  const correct = mode === 'correct' || (mode !== 'wrong' && !hasCorrect() && Math.random() < 0.75);
+  const correct = mode === 'correct' || (mode !== 'wrong' && !hasCorrect() && run.sinceQ >= run.wrongBefore);
   let val;
   if (correct) val = run.q.ans;
   else {
@@ -448,6 +448,7 @@ function spawnBalloon(mode) {
     }
     val = cands.length ? pick(cands) : run.q.ans + rnd(41, 99);
   }
+  if (!correct) run.sinceQ++;
   balloons.push({
     x, y: H + r * 1.5, r, val, correct: val === run.q.ans, alive: true,
     color: pickColor(), sway: 0.5 + Math.random() * 0.9, phase: Math.random() * 6,
@@ -464,7 +465,7 @@ function update(dt) {
     run.spawnT -= dt;
     const live = balloons.filter(b => b.alive && !b.stale).length;
     if (run.spawnT <= 0 && live < run.maxB) {
-      spawnBalloon(!hasCorrect() && live >= run.maxB - 2 ? 'correct' : 'auto');
+      spawnBalloon(!hasCorrect() && live >= run.maxB - 1 ? 'correct' : 'auto');
       run.spawnT = run.gap * (0.7 + Math.random() * 0.6);
     }
   }
@@ -567,9 +568,9 @@ function finish() {
   else {
     show('seRetry');
     $('seRetry').onclick = () => startStage(i, s);
-    if (s < 4) { nb.textContent = 'Sonraki etap'; nb.onclick = () => startStage(i, s + 1); }
-    else if (i < 4) { nb.textContent = 'Sonraki ada'; nb.onclick = () => startStage(i + 1, 0); }
-    else { nb.textContent = 'Adalara dön'; nb.onclick = openMap; }
+    if (s < LPI - 1) { nb.textContent = 'Sonraki etap'; nb.onclick = () => startStage(i, s + 1); }
+    else if (i < ISLANDS.length - 1) { nb.textContent = 'Sonraki ada'; nb.onclick = () => startStage(i + 1, 0); }
+    else { nb.textContent = 'Adalara dön'; nb.onclick = () => openMap(); }
   }
   show('stageEnd');
 }
@@ -836,62 +837,89 @@ function setSound(on) {
   $('soundBtn2').textContent = on ? '🔊 Ses açık' : '🔇 Ses kapalı';
   if (on) { ensureAudio(); sfx.click(); }
 }
-function openMap() {
+let mapView = 'islands', mapIsl = 0;
+function openMap(view, i) {
   ensureAudio();
   state = 'map'; paused = false; tipOpen = false;
   balloons.length = 0; particles.length = 0;
   ['hud', 'stageEnd', 'pause', 'tip'].forEach(hide);
   $('toast').className = '';
   show('scrMap');
-  buildMap();
+  if (view === 'levels') { mapView = 'levels'; mapIsl = i; buildLevels(i); }
+  else { mapView = 'islands'; buildIslands(); }
 }
-function buildMap() {
-  $('mapStars').textContent = `${totalStars()}/75`;
+function starRow(n) { return `<span class="st">${[0, 1, 2].map(k => `<i class="${k < n ? 'on' : ''}">${STAR_SVG}</i>`).join('')}</span>`; }
+
+function buildIslands() {
+  $('mapTitle').textContent = 'Balon Adaları';
+  $('mapStars').textContent = `${totalStars()}/${ISLANDS.length * LPI * 3}`;
   const root = $('mapScroll');
   root.innerHTML = '';
-  const cu = nextStage();
-  let curSec = null;
-  ISLANDS.forEach((is, i) => {
-    const sec = document.createElement('section');
-    sec.className = 'isl';
-    sec.style.background = `linear-gradient(180deg, ${is.mapSea[0]}, ${is.mapSea[1]})`;
-    let h = '<div class="islin">';
-    for (let k = 0; k < 5; k++) {
-      const hv = hash(i * 9 + k * 2.3);
-      h += `<span class="cloudy" style="left:${4 + hv * 78}%;top:${34 + k * 76}px;width:${26 + hv * 44}px;height:${8 + hv * 5}px"></span>`;
-    }
-    h += `<div class="blob" style="background:${is.sand}"></div>`;
-    h += `<div class="iname"><span class="iop" style="background:${is.acc}">${is.op}</span>${is.name}</div>`;
-    DECO_POS.forEach(([x, y], k) => { h += `<span class="ideco" style="left:${x}%;top:${y}px" aria-hidden="true">${is.deco[k]}</span>`; });
-    NODE_POS.forEach(([x, y], s) => {
-      const lock = !isUnlocked(i, s), sc = starsOf(i, s), isCur = cu.i === i && cu.s === s && !lock;
-      const st = lock ? '' : `<span class="st">${[0, 1, 2].map(k => `<i class="${k < sc ? 'on' : ''}">${STAR_SVG}</i>`).join('')}</span>`;
-      h += `<button class="node${lock ? ' locked' : ''}${isCur ? ' cur' : ''}" data-i="${i}" data-s="${s}" style="left:${x}%;top:${y}px;--acc:${is.acc}" aria-label="${is.name}, etap ${s + 1}${lock ? ', kilitli' : ''}">${lock ? LOCK_SVG : s + 1}${st}</button>`;
-      if (isCur) curSec = sec;
-    });
-    h += '</div>';
-    sec.innerHTML = h;
-    root.appendChild(sec);
-  });
+  const list = document.createElement('div');
+  list.className = 'ilist';
+  list.innerHTML = ISLANDS.map((is, i) => {
+    const d = doneCount(i), st = islandStars(i);
+    return `<button class="icard" data-i="${i}" style="--acc:${is.acc};--sea1:${is.mapSea[0]};--sea2:${is.mapSea[1]}">
+      <span class="ibadge">${is.op}</span>
+      <span class="iinfo"><b>${is.name}</b>
+        <span class="ibar"><i style="width:${Math.round(d / LPI * 100)}%"></i></span>
+        <small>${d}/${LPI} etap · ⭐ ${st}/${LPI * 3}</small></span>
+      <span class="ideco2">${is.deco[0]}</span><span class="igo">›</span>
+    </button>`;
+  }).join('');
+  root.appendChild(list);
   const foot = document.createElement('div');
   foot.className = 'mapfoot';
-  foot.innerHTML = '<p>Her etabı bitirince sonraki açılır. Hiç yanlış yapmazsan 3 yıldız!</p><button class="reset" id="resetBtn">İlerlemeyi sıfırla</button>';
+  foot.innerHTML = '<p>Her adada 100 etap var, sorular yavaş yavaş zorlaşır. İstediğin işlemden başlayabilirsin.</p><button class="reset" id="resetBtn">İlerlemeyi sıfırla</button>';
   root.appendChild(foot);
-  root.querySelectorAll('.node').forEach(b => b.addEventListener('click', () => {
-    ensureAudio();
-    const i = +b.dataset.i, s = +b.dataset.s;
-    if (!isUnlocked(i, s)) { b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); return; }
-    sfx.click(); startStage(i, s);
-  }));
+  list.querySelectorAll('.icard').forEach(b => b.addEventListener('click', () => { sfx.click(); openMap('levels', +b.dataset.i); }));
   let armed = false;
   $('resetBtn').addEventListener('click', e => {
     if (!armed) { armed = true; e.target.textContent = 'Emin misin? Tüm yıldızlar silinir. Tekrar dokun.'; return; }
-    save.stars = {}; save.last = null; writeSave(); buildMap();
+    save.stars = {}; save.last = null; writeSave(); buildIslands();
   });
   root.scrollTop = 0;
-  if (curSec && curSec !== root.firstElementChild) {
-    root.scrollTop = Math.max(0, curSec.getBoundingClientRect().top - root.getBoundingClientRect().top - 10);
+}
+
+function buildLevels(i) {
+  const is = ISLANDS[i], cu = nextIn(i);
+  $('mapTitle').textContent = is.name;
+  $('mapStars').textContent = `${islandStars(i)}/${LPI * 3}`;
+  const root = $('mapScroll');
+  root.innerHTML = '';
+  const head = document.createElement('div');
+  head.className = 'lvlhead';
+  head.innerHTML = `<span class="ibadge" style="background:${is.acc}">${is.op}</span>
+    <span><b>${is.name}</b><small>${doneCount(i)}/${LPI} etap tamam · Etap ${cu + 1} sırada</small></span>`;
+  root.appendChild(head);
+  const grid = document.createElement('div');
+  grid.className = 'lvlgrid';
+  let html = '';
+  for (let s = 0; s < LPI; s++) {
+    const lock = !isUnlocked(i, s), sc = starsOf(i, s), isCur = s === cu && !lock;
+    html += `<button class="lnode${lock ? ' locked' : ''}${isCur ? ' cur' : ''}" data-s="${s}" style="--acc:${is.acc}"
+      aria-label="Etap ${s + 1}${lock ? ', kilitli' : ''}">${s + 1}${lock ? '' : starRow(sc)}</button>`;
   }
+  grid.innerHTML = html;
+  root.appendChild(grid);
+  const foot = document.createElement('div');
+  foot.className = 'mapfoot';
+  foot.innerHTML = '<div class="jump"><button id="jumpCur">Sıradaki etaba git</button><button id="backIsl">Diğer adalar</button></div><p>Bir etabı bitirince sonraki açılır.</p>';
+  root.appendChild(foot);
+  grid.querySelectorAll('.lnode').forEach(b => b.addEventListener('click', () => {
+    ensureAudio();
+    const s = +b.dataset.s;
+    if (!isUnlocked(i, s)) { b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); return; }
+    sfx.click(); startStage(i, s);
+  }));
+  const toCur = () => {
+    const el = grid.querySelector('.lnode.cur');
+    if (el) root.scrollTop = Math.max(0, el.getBoundingClientRect().top - root.getBoundingClientRect().top + root.scrollTop - root.clientHeight * 0.35);
+  };
+  $('jumpCur').addEventListener('click', toCur);
+  $('backIsl').addEventListener('click', () => { sfx.click(); openMap(); });
+  root.scrollTop = 0;
+  toCur();
 }
 
 /* ================= döngü & girdi ================= */
@@ -906,10 +934,11 @@ function frame(now) {
 cvs.addEventListener('pointerdown', e => { ensureAudio(); tap(e.clientX, e.clientY); });
 $('pauseBtn').addEventListener('click', () => { ensureAudio(); pauseGame(); });
 $('resumeBtn').addEventListener('click', () => { sfx.click(); resumeGame(); });
-$('quitBtn').addEventListener('click', () => { sfx.click(); openMap(); });
+$('quitBtn').addEventListener('click', () => { sfx.click(); openMap('levels', cur.i); });
 $('soundBtn2').addEventListener('click', () => setSound(!soundOn));
 $('btnSound').addEventListener('click', () => setSound(!soundOn));
-$('seMap').addEventListener('click', () => { sfx.click(); openMap(); });
+$('mapBack').addEventListener('click', () => { sfx.click(); if (mapView === 'levels') openMap(); else location.href = '../'; });
+$('seMap').addEventListener('click', () => { sfx.click(); openMap('levels', cur.i); });
 $('tipOk').addEventListener('click', () => { tipOpen = false; hide('tip'); sfx.click(); last = performance.now(); });
 window.addEventListener('keydown', e => {
   if (tipOpen) { if (e.key === 'Enter' || e.code === 'Space') { e.preventDefault(); $('tipOk').click(); } return; }
@@ -921,7 +950,7 @@ document.addEventListener('dblclick', e => e.preventDefault());
 window.addEventListener('resize', () => { resize(); });
 window.addEventListener('orientationchange', () => setTimeout(resize, 200));
 
-if (DEBUG) window.__b = { state: () => state, run, balloons, startStage, openMap, save, tap };
+if (DEBUG) window.__b = { state: () => state, run, balloons, startStage, openMap, save, tap, ISLANDS, LPI, tOf, genQ };
 
 loadSave();
 soundOn = save.sound !== false;
